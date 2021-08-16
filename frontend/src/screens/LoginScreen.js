@@ -6,6 +6,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import { login } from '../actions/userActions'
+// import { GoogleLogin } from 'react-google-login'
 
 const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState('')
@@ -28,6 +29,14 @@ const LoginScreen = ({ location, history }) => {
     e.preventDefault()
     dispatch(login(email, password))
   }
+
+  // const googleSuccess = async (res) => {
+  //   console.log(res)
+  // }
+  // const googleFailure = (error) => {
+  //   console.log(error)
+  //   console.log('Google Sign In was unsuccessful. Try Again later')
+  // }
 
   return (
     <FormContainer>
@@ -58,6 +67,12 @@ const LoginScreen = ({ location, history }) => {
         <Button type='submit' varient='primary'>
           Sign In
         </Button>
+        {/* <GoogleLogin
+          clientId='388227343337-fo1ar21fjls4krhoam4qf494nl3us5gs.apps.googleusercontent.com'
+          onSuccess={googleSuccess}
+          onFailure={googleFailure}
+          cookiePolicy='single-host-origin'
+        /> */}
       </Form>
 
       <Row className='py-3'>
